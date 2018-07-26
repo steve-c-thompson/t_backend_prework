@@ -17,9 +17,25 @@ class Burrito
   def remove_topping(topping)
     toppings.delete(topping)
   end
+
+  def change_protein(protein)
+    @protein = protein
+    # self.protein does not work here because that is a method call
+  end
 end
 
 dinner = Burrito.new("Beans", "Rice", ["cheese", "salsa", "guacamole"])
 p dinner.protein
 p dinner.base
 p dinner.toppings
+
+dinner.add_topping("onions")
+p dinner.toppings
+
+puts "removing salsa"
+p dinner.remove_topping("salsa")
+p dinner.toppings
+
+dinner.change_protein("tofu")
+p dinner.protein
+p dinner
