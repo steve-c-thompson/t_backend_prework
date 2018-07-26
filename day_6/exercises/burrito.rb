@@ -6,10 +6,16 @@
 
 class Burrito
   attr_reader :protein, :base, :toppings
-  def initilize(protein, base, toppings)
+  def initialize(protein, base, toppings)
     @protein  = protein
     @base     = base
     @toppings = toppings
+  end
+  def add_topping(topping)
+    toppings.push(topping)
+  end
+  def remove_topping(topping)
+    toppings.delete(topping)
   end
 end
 
